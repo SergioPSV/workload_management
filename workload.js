@@ -3,12 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3001;
-const address = "https://workloadmanagment.jnpstr.com/";
+const address = "ADDRESS WITH WEBHOOKS";
 const configAdmins = {
     method: 'get',
     url: 'https://api.intercom.io/admins',
     headers: { 'Content-Type': 'application/json;charset=utf-8',
-               'Authorization': 'Bearer dG9rOmE2OTMyYTkwX2RkNTlfNGJmMF9iYjYxXzg3NDY3ZDRlMGQxZjoxOjA=',
+               'Authorization': 'Bearer TOKEN',
                'Accept': 'application/json'
              }
 };
@@ -18,11 +18,11 @@ let adminId, adminsStatus, configCountChats;
 let bots = [
   '326432',   //Facebook Bot
   '761712',   // Poster
-  '3896431',   // Anna Kasianenko
-  '4277540',   // Vladimir Siliveystr
-  '4393949',   // Yana Tretiakova
+  '3896431',   // Anna 
+  '4277540',   // Vladimir 
+  '4393949',   // Yana 
   '3730256',  // Яна
-  '1956517'  // Виктория Приходько
+  '1956517'  // Виктория 
 ];
 let exceptionsTeamId = [
   3027748,  // Chat Academy
@@ -33,13 +33,7 @@ let exceptionsTeamId = [
   1883810   // English Team
 ];
 let importantUserId = [
-  'cup.joinposter.com',
-  'zhatkin.joinposter.com',
-  'kedy.joinposter.com',
-  'kolizei.joinposter.com',
-  'giperedcup.joinposter.com',
-  'red-cup-chelyabinsk',
-  'psyho-test.joinposter.com'
+  //hidden info
 ];
 
 function assignAdmin(urlForAssign, adminId, counterMin) {
@@ -49,7 +43,7 @@ function assignAdmin(urlForAssign, adminId, counterMin) {
     url: urlForAssign,
     headers : {
             'Content-Type': 'application/json;charset=utf-8',
-            'Authorization': 'Bearer dG9rOmE2OTMyYTkwX2RkNTlfNGJmMF9iYjYxXzg3NDY3ZDRlMGQxZjoxOjA=',
+            'Authorization': 'Bearer TOKEN',
             'Accept': 'application/json'
         },
     data: {
@@ -69,7 +63,7 @@ function assignAdmin(urlForAssign, adminId, counterMin) {
         url: urlForNote,
         headers : {
                 'Content-Type': 'application/json;charset=utf-8',
-                'Authorization': 'Bearer dG9rOmE2OTMyYTkwX2RkNTlfNGJmMF9iYjYxXzg3NDY3ZDRlMGQxZjoxOjA=',
+                'Authorization': 'Bearer TOKEN',
                 'Accept': 'application/json'
             },
         data: {
@@ -88,7 +82,7 @@ function assignAdmin(urlForAssign, adminId, counterMin) {
         url: 'https://api.intercom.io/conversations/search',
         headers : {
                 'Content-Type': 'application/json;charset=utf-8',
-                'Authorization': 'Bearer dG9rOmE2OTMyYTkwX2RkNTlfNGJmMF9iYjYxXzg3NDY3ZDRlMGQxZjoxOjA=',
+                'Authorization': 'Bearer TOKEN',
                 'Accept': 'application/json'
             },
         data: {
